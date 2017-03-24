@@ -28,4 +28,22 @@ final class QiitaApi {
             ]
         }
     }
+    
+    struct getUser: QiitaRequst {
+        let perPage: String
+        let page: String
+        
+        typealias Response = QiitaResponse<User>
+        
+        var resource: String {
+            return "/users"
+        }
+        
+        var parameters: [String : Any] {
+            return [
+                "per_paga": perPage,
+                "page": page
+            ]
+        }
+    }
 }
